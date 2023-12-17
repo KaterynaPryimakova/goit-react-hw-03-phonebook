@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  width: 280px;
+  margin-bottom: 5px;
+  border: 1px dotted black;
+  border-radius: 5px;
+  padding: 10px;
+}
+.button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 2px 2px 1px grey;
+}
+.button:hover {
+  color: grey;
+  background-color: #000;
+}
