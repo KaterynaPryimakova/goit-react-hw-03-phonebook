@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import css from './ContactForm.module.css';
-import { Form } from './ContactForm.styled';
+import { Form } from './ContactForm.styled.js';
 
 export class ContactForm extends Component {
   state = {
@@ -49,7 +48,7 @@ export class ContactForm extends Component {
           />
         </label>
 
-        <button className={css.button}>Add contact</button>
+        <button>Add contact</button>
       </Form>
     );
   }
