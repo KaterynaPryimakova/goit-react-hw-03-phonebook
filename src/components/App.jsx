@@ -4,11 +4,27 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { nanoid } from 'nanoid';
 
+const CONTACTS = 'contacts';
+
 export class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem(CONTACTS));
+    if (contacts) {
+      this.setState({ contacts });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.contacts === this.state.contacts) {
+      return;
+    }
+    localStorage.setItem(CONTACTS, JSON.stringify(this.state.contacts));
+  }
 
   updateState = newContact => {
     const alreadyExist = this.state.contacts.some(
